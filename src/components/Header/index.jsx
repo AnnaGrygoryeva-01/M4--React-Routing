@@ -18,13 +18,13 @@ function Header() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/about" style={activeLinkStyle}>
-                About
+              <NavLink to="/tools" style={activeLinkStyle}>
+                Tools
               </NavLink>
             </li>
             <li>
-              <NavLink to="/tools" style={activeLinkStyle}>
-                Tools
+              <NavLink to="/about" style={activeLinkStyle}>
+                About
               </NavLink>
             </li>
           </ul>

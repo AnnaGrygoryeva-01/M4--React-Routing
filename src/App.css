@@ -1,5 +1,11 @@
 * {
   font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin-bottom: 0;
 }
 
 #root {

@@ -1,13 +1,14 @@
 import { NavLink, Outlet } from "react-router-dom";
+import styles from "./Tools.module.sass";
 
 const activeLinkStyle = ({ isActive }) => ({
-  color: isActive ? "blue" : "inherit",
+  color: isActive ? "#cafd00ff" : "inherit",
 });
 
 function Tools() {
   return (
     <div>
-      <ul>
+      <ul className={styles.toolsContainer}>
         <li>
           <NavLink to="counter" style={activeLinkStyle}>
             Counter
