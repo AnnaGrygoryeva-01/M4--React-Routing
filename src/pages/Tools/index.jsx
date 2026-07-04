@@ -1,21 +1,20 @@
 import { NavLink, Outlet } from "react-router-dom";
 import styles from "./Tools.module.sass";
+import { createActiveLinkClass } from "../../utils/activeLinkClass";
 
-const activeLinkStyle = ({ isActive }) => ({
-  color: isActive ? "#cafd00ff" : "inherit",
-});
+const activeLinkClass = createActiveLinkClass(styles);
 
 function Tools() {
   return (
     <div>
       <ul className={styles.toolsContainer}>
         <li>
-          <NavLink to="counter" style={activeLinkStyle}>
+          <NavLink to="." end className={activeLinkClass}>
             Counter
           </NavLink>
         </li>
         <li>
-          <NavLink to="stopwatch" style={activeLinkStyle}>
+          <NavLink to="stopwatch" className={activeLinkClass}>
             Stopwatch
           </NavLink>
         </li>

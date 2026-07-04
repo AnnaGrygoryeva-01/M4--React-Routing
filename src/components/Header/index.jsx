@@ -1,35 +1,34 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Header.module.sass";
+import { createActiveLinkClass } from "../../utils/activeLinkClass";
 
-const activeLinkStyle = ({ isActive }) => ({
-  color: isActive ? "blue" : "inherit",
-});
+const activeLinkClass = createActiveLinkClass(styles);
 
 function Header() {
   return (
     <header>
-      <div className={styles.headerContainer}>
-        <h1>My App</h1>
-        <nav>
-          <ul className={styles.NavWrapper}>
-            <li>
-              <NavLink to="/" style={activeLinkStyle}>
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/tools" style={activeLinkStyle}>
-                Tools
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/about" style={activeLinkStyle}>
-                About
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <nav className={styles.headerContainer}>
+        <NavLink to="/" className={styles.logo}>
+          <h1>My App</h1>
+        </NavLink>
+        <ul className={styles.navWrapper}>
+          <li>
+            <NavLink to="/" className={activeLinkClass}>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/tools" className={activeLinkClass}>
+              Tools
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/about" className={activeLinkClass}>
+              About
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 }

@@ -7,7 +7,9 @@ function NotFound() {
       <p className={styles.errorCode}>404 </p>
       <p>The Page Cannot Be Found</p>
       <div>
-        <Link to="/">Go back to Home Page</Link>
+        <Link to="/" replace>
+          Go back to Home Page
+        </Link>
       </div>
     </div>
   );
