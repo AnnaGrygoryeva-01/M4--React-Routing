@@ -9,7 +9,7 @@ function Header() {
     <header>
       <nav className={styles.headerContainer}>
         <NavLink to="/" className={styles.logo}>
-          <h1>My App</h1>
+          My App
         </NavLink>
         <ul className={styles.navWrapper}>
           <li>

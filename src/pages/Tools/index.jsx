@@ -6,21 +6,23 @@ const activeLinkClass = createActiveLinkClass(styles);
 
 function Tools() {
   return (
-    <div>
-      <ul className={styles.toolsContainer}>
-        <li>
-          <NavLink to="." end className={activeLinkClass}>
-            Counter
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="stopwatch" className={activeLinkClass}>
-            Stopwatch
-          </NavLink>
-        </li>
-      </ul>
+    <>
+      <nav>
+        <ul className={styles.toolsContainer}>
+          <li>
+            <NavLink to="." end className={activeLinkClass}>
+              Counter
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="stopwatch" className={activeLinkClass}>
+              Stopwatch
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
       <Outlet />
-    </div>
+    </>
   );
 }
 
