@@ -1,0 +1,34 @@
+@use "../../styles/shared" as shared
+
+.label
+    display: flex
+    flex-direction: column
+    margin-bottom: 1rem
+
+.labelText
+    font-size: 1rem
+    margin-bottom: 0.5rem
+    font-weight: 500
+
+.input
+    padding: 0.75rem
+    font-size: 1rem
+    border: 2px solid #ccc
+    border-radius: 4px
+    font-family: inherit
+    transition: border-color 0.3s
+
+    &:focus
+        outline: none
+        border-color: shared.$color-blue
+
+.valid
+    border-color: #28a745
+
+.invalid
+    border-color: #dc3545
+
+.error
+    color: #dc3545
+    font-size: 0.875rem
+    margin-top: 0.25rem

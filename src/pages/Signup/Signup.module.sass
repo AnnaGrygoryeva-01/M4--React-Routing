@@ -1,0 +1,79 @@
+@use "../../styles/shared" as shared
+
+.signupContainer
+    +shared.flex-center
+    flex-direction: column
+    min-height: 60vh
+    padding: 2rem
+
+.formWrapper
+    width: 100%
+    max-width: 400px
+    padding: 2rem
+    border: 1px solid shared.$color-black
+    border-radius: 8px
+
+.title
+    font-size: 2rem
+    margin-bottom: 1.5rem
+    text-align: center
+
+.form
+    display: flex
+    flex-direction: column
+
+.nameRow
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 0.75rem
+
+.input
+    padding: 0.75rem
+    font-size: 1rem
+    border: 2px solid #ccc
+    border-radius: 4px
+    font-family: inherit
+    transition: border-color 0.3s
+
+    &:focus
+        outline: none
+        border-color: shared.$color-blue
+
+.valid
+    border-color: #28a745
+
+.invalid
+    border-color: #dc3545
+
+.error
+    color: #dc3545
+    font-size: 0.875rem
+    margin-top: 0.25rem
+
+.submitBtn
+    padding: 0.75rem
+    font-size: 1rem
+    font-weight: 600
+    color: white
+    background-color: shared.$color-blue
+    border: none
+    border-radius: 4px
+    cursor: pointer
+    transition: background-color 0.3s
+    margin-top: 0.5rem
+
+    &:hover
+        background-color: #0056b3
+
+.toggleText
+    text-align: center
+    margin-top: 1rem
+    font-size: 0.95rem
+
+.toggleLink
+    color: shared.$color-blue
+    text-decoration: none
+    font-weight: 600
+
+    &:hover
+        text-decoration: underline

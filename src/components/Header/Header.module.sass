@@ -1,11 +1,19 @@
 @use "../../styles/shared" as shared
 
+.loginContainer
+    display: flex
+    justify-content: flex-end
+    padding: 0.5rem 2rem
+    // border-bottom: 1px solid shared.$color-black
+    
+
 .headerContainer
     +shared.flex-between
     align-items: center
     padding: 1rem
     margin-bottom: 2rem
     border-bottom: 1px solid shared.$color-black
+    padding-top: 0rem
 
 .logo
     text-decoration: none

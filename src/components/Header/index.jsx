@@ -7,6 +7,11 @@ const activeLinkClass = createActiveLinkClass(styles);
 function Header() {
   return (
     <header>
+      <div className={styles.loginContainer}>
+        <NavLink to="/login" className={activeLinkClass}>
+          Sign in
+        </NavLink>
+      </div>
       <nav className={styles.headerContainer}>
         <NavLink to="/" className={styles.logo}>
           My App
