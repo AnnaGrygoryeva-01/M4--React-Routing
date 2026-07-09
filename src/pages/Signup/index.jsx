@@ -28,15 +28,14 @@ function Signup() {
   };
 
   return (
-    <div className={styles.signupContainer}>
-      <div className={styles.formWrapper}>
-        <h1 className={styles.title}>Sign Up</h1>
-        <Formik
-          initialValues={initialValues}
-          onSubmit={handleSubmit}
-          validationSchema={SIGN_UP_VALIDATION_SCHEMA}
-        >
-          <Form className={styles.form}>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Sign Up</h1>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleSubmit}
+        validationSchema={SIGN_UP_VALIDATION_SCHEMA}
+      >
+        <Form className={styles.form}>
             <div className={styles.formRow}>
               <FormInput
                 classes={classes}
@@ -87,22 +86,28 @@ function Signup() {
             </div>
             <FormInput
               classes={classes}
-              label="Agree to our Terms and Conditions *"
+              label={
+                <>
+                  I agree to the{" "}
+                  <Link to="/terms-and-conditions">
+                    Terms and Conditions
+                  </Link>
+                </>
+              }
               type="checkbox"
               name="agreeToTerms"
             />
-            <button type="submit" className={styles.submitBtn}>
-              Sign Up
-            </button>
-          </Form>
-        </Formik>
-        <p className={styles.toggleText}>
-          Already have an account?{" "}
-          <Link to="/login" className={styles.toggleLink}>
-            Sign in
-          </Link>
-        </p>
-      </div>
+          <button type="submit" className={styles.submitBtn}>
+            Sign Up
+          </button>
+        </Form>
+      </Formik>
+      <p className={styles.toggleText}>
+        Already have an account?{" "}
+        <Link to="/login" className={styles.toggleLink}>
+          Sign in
+        </Link>
+      </p>
     </div>
   );
 }

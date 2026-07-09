@@ -6,11 +6,9 @@ function NotFound() {
     <div className={styles.errorContainer}>
       <p className={styles.errorCode}>404 </p>
       <p>The Page Cannot Be Found</p>
-      <div>
-        <Link to="/" replace>
-          Go back to Home Page
-        </Link>
-      </div>
+      <Link to="/" replace>
+        Go back to Home Page
+      </Link>
     </div>
   );
 }

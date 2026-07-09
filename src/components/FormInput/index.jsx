@@ -24,7 +24,7 @@ export default function FormInput(props) {
           <label className={labelClassName}>
             {!isCheckbox && <span className={styles.labelText}>{label}</span>}
             <input type={type} className={inputClassNames} {...restProps} {...field} />
-            {isCheckbox && <span className={styles.labelText}>{label}</span>}
+            {isCheckbox && <span className={styles.labelText}>{typeof label === "string" ? label : label}</span>}
             {meta.error && meta.touched && (
               <span className={classes?.error || styles.error}>
                 {meta.error}

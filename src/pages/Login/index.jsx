@@ -20,42 +20,40 @@ function Login() {
   };
 
   return (
-    <div className={styles.loginContainer}>
-      <div className={styles.formWrapper}>
-        <h1 className={styles.title}>Sign in</h1>
-        <Formik
-          initialValues={initialValues}
-          onSubmit={handleSubmit}
-          validationSchema={SIGN_IN_VALIDATION_SCHEMA}
-        >
-          <Form className={styles.form}>
-            <FormInput
-              classes={classes}
-              label="Email"
-              type="email"
-              name="email"
-              placeholder="Enter your email"
-              autoFocus
-            />
-            <FormInput
-              classes={classes}
-              label="Password"
-              type="password"
-              name="password"
-              placeholder="Enter your password"
-            />
-            <button type="submit" className={styles.submitBtn}>
-              Sign In
-            </button>
-          </Form>
-        </Formik>
-        <p className={styles.toggleText}>
-          Don't have an account?{" "}
-          <Link to="/signup" className={styles.toggleLink}>
-            Sign up
-          </Link>
-        </p>
-      </div>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Sign in</h1>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleSubmit}
+        validationSchema={SIGN_IN_VALIDATION_SCHEMA}
+      >
+        <Form className={styles.form}>
+          <FormInput
+            classes={classes}
+            label="Email"
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            autoFocus
+          />
+          <FormInput
+            classes={classes}
+            label="Password"
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+          />
+          <button type="submit" className={styles.submitBtn}>
+            Sign In
+          </button>
+        </Form>
+      </Formik>
+      <p className={styles.toggleText}>
+        Don't have an account?{" "}
+        <Link to="/signup" className={styles.toggleLink}>
+          Sign up
+        </Link>
+      </p>
     </div>
   );
 }
