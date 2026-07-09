@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Oyren environment-specific
+.oyren-routes.json
+.oyren-deliver
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

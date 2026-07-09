@@ -17,18 +17,27 @@ export default function FormInput(props) {
           }
         );
 
-        const labelClassName = isCheckbox ? styles.checkboxLabel : styles.label;
+        const errorNode = meta.error && meta.touched && (
+          <span className={classes?.error || styles.error}>{meta.error}</span>
+        );
+
+        if (isCheckbox) {
+          return (
+            <div className={styles.checkboxField}>
+              <label className={styles.checkboxLabel}>
+                <input type={type} className={inputClassNames} {...restProps} {...field} />
+                <span className={styles.labelText}>{label}</span>
+              </label>
+              {errorNode}
+            </div>
+          );
+        }
 
         return (
-          <label className={labelClassName}>
-            {!isCheckbox && <span className={styles.labelText}>{label}</span>}
+          <label className={styles.label}>
+            <span className={styles.labelText}>{label}</span>
             <input type={type} className={inputClassNames} {...restProps} {...field} />
-            {isCheckbox && <span className={styles.labelText}>{typeof label === "string" ? label : label}</span>}
-            {meta.error && meta.touched && (
-              <span className={classes?.error || styles.error}>
-                {meta.error}
-              </span>
-            )}
+            {errorNode}
           </label>
         );
       }}
