@@ -2,10 +2,10 @@ import styles from "./Home.module.sass";
 
 function Home() {
   return (
-    <div className={styles.homeTitle}>
+    <h1 className={styles.homeTitle}>
       Your Everyday&nbsp;
       <span className={styles.highlightText}> Digital Toolkit </span>
-    </div>
+    </h1>
   );
 }
 

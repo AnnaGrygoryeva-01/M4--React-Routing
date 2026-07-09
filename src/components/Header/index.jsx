@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Header.module.sass";
 import { createActiveLinkClass } from "../../utils/activeLinkClass";
 
@@ -8,8 +10,8 @@ function Header() {
   return (
     <header>
       <div className={styles.loginContainer}>
-        <NavLink to="/login" className={activeLinkClass}>
-          Sign in
+        <NavLink to="/login" className={activeLinkClass} title="Sign in">
+          <FontAwesomeIcon icon={faUser} />
         </NavLink>
       </div>
       <nav className={styles.headerContainer}>

@@ -3,7 +3,7 @@ import styles from "./About.module.sass";
 function About() {
   return (
     <div className={styles.aboutContainer}>
-      <h2>Welcome to MyApp!</h2>
+      <h1>Welcome to MyApp!</h1>
       <p>
         Born out of a frustration with overly complicated software, MyApp was
         designed to be your ultimate digital pocketknife for everyday focus and

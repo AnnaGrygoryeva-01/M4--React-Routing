@@ -3,9 +3,20 @@
 .loginContainer
     display: flex
     justify-content: flex-end
-    padding: 0.5rem 2rem
-    // border-bottom: 1px solid shared.$color-black
-    
+    padding: 1rem 2rem
+    padding-bottom: 0
+
+    a
+        font-size: 1.2rem
+        text-decoration: none
+        color: inherit
+        transition: color 0.3s
+        &:hover
+            color: shared.$color-blue
+
+        &.active
+            color: shared.$color-blue
+
 
 .headerContainer
     +shared.flex-between
