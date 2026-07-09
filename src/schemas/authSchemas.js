@@ -29,7 +29,8 @@ export const SIGN_UP_VALIDATION_SCHEMA = yup.object({
     .required("Last name is required"),
   dateOfBirth: yup
     .date()
-    .max(new Date(), "Date of birth cannot be in the future"),
+    .max(new Date(), "Date of birth cannot be in the future")
+    .required("Date of birth is required"),
   email: yup
     .string()
     .trim()

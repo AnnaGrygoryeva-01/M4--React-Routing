@@ -13,8 +13,7 @@ export default function FormInput(props) {
           classes?.input || styles.input,
           {
             [classes?.valid || styles.valid]: !meta.error && meta.touched && !isCheckbox,
-            [classes?.invalid || styles.invalid]: meta.error && meta.touched && !isCheckbox,
-            [classes?.invalid || styles.invalid]: meta.error && meta.touched && isCheckbox,
+            [classes?.invalid || styles.invalid]: meta.error && meta.touched,
           }
         );
 
