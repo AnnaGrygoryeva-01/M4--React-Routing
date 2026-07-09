@@ -27,6 +27,9 @@ export const SIGN_UP_VALIDATION_SCHEMA = yup.object({
     .min(2, "Last name must be at least 2 characters")
     .max(50, "Last name must not exceed 50 characters")
     .required("Last name is required"),
+  dateOfBirth: yup
+    .date()
+    .max(new Date(), "Date of birth cannot be in the future"),
   email: yup
     .string()
     .trim()

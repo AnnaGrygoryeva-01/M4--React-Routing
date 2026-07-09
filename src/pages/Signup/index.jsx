@@ -8,6 +8,7 @@ function Signup() {
   const initialValues = {
     firstName: "",
     lastName: "",
+    dateOfBirth: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -36,10 +37,10 @@ function Signup() {
           validationSchema={SIGN_UP_VALIDATION_SCHEMA}
         >
           <Form className={styles.form}>
-            <div className={styles.nameRow}>
+            <div className={styles.formRow}>
               <FormInput
                 classes={classes}
-                label="First Name"
+                label="First Name *"
                 type="text"
                 name="firstName"
                 placeholder="Enter your first name"
@@ -47,36 +48,46 @@ function Signup() {
               />
               <FormInput
                 classes={classes}
-                label="Last Name"
+                label="Last Name *"
                 type="text"
                 name="lastName"
                 placeholder="Enter your last name"
               />
             </div>
+            <div className={styles.formRow}>
+              <FormInput
+                classes={classes}
+                label="Date of Birth"
+                type="date"
+                name="dateOfBirth"
+              />
+              <FormInput
+                classes={classes}
+                label="Email *"
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+              />
+            </div>
+            <div className={styles.formRow}>
+              <FormInput
+                classes={classes}
+                label="Password *"
+                type="password"
+                name="password"
+                placeholder="Enter your password"
+              />
+              <FormInput
+                classes={classes}
+                label="Confirm Password *"
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirm your password"
+              />
+            </div>
             <FormInput
               classes={classes}
-              label="Email"
-              type="email"
-              name="email"
-              placeholder="Enter your email"
-            />
-            <FormInput
-              classes={classes}
-              label="Password"
-              type="password"
-              name="password"
-              placeholder="Enter your password"
-            />
-            <FormInput
-              classes={classes}
-              label="Confirm Password"
-              type="password"
-              name="confirmPassword"
-              placeholder="Confirm your password"
-            />
-            <FormInput
-              classes={classes}
-              label="Agree to our Terms and Conditions"
+              label="Agree to our Terms and Conditions *"
               type="checkbox"
               name="agreeToTerms"
             />
