@@ -11,6 +11,7 @@ function Signup() {
     email: "",
     password: "",
     confirmPassword: "",
+    agreeToTerms: false,
   };
 
   const handleSubmit = (values, formikBag) => {
@@ -72,6 +73,12 @@ function Signup() {
               type="password"
               name="confirmPassword"
               placeholder="Confirm your password"
+            />
+            <FormInput
+              classes={classes}
+              label="Agree to our Terms and Conditions"
+              type="checkbox"
+              name="agreeToTerms"
             />
             <button type="submit" className={styles.submitBtn}>
               Sign Up
