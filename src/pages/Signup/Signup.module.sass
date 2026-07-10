@@ -5,20 +5,13 @@
     flex-direction: column
     min-height: 60vh
     padding: 2rem
-    width: 100%
-    max-width: 500px
+    width: min(95vw, 1000px)
     margin: 0 auto
     border: 1px solid shared.$color-black
     border-radius: 8px
 
-    @media (min-width: 768px)
-        max-width: 600px
-
-    @media (min-width: 1024px)
-        max-width: 700px
-
     @media (max-width: 600px)
-        max-width: 100%
+        width: 100%
         padding: 1.5rem
 
 .title
@@ -38,28 +31,6 @@
     @media (max-width: 600px)
         grid-template-columns: 1fr
         gap: 0
-
-.input
-    padding: 0.75rem
-    font-size: 1rem
-    border: 2px solid #ccc
-    border-radius: 4px
-    font-family: inherit
-    transition: border-color 0.3s
-
-    &:focus
-        outline: none
-        border-color: shared.$color-blue
-
-.valid
-    border-color: #28a745
-
-.invalid
-    border-color: #dc3545
-
-.error
-    color: #dc3545
-    font-size: 0.875rem
 
 .submitBtn
     padding: 0.75rem

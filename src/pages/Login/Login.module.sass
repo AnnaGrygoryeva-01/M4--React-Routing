@@ -5,11 +5,14 @@
     flex-direction: column
     min-height: 60vh
     padding: 2rem
-    width: 100%
-    max-width: 400px
+    width: min(90vw, 700px)
     margin: 0 auto
     border: 1px solid shared.$color-black
     border-radius: 8px
+
+    @media (max-width: 600px)
+        width: 100%
+        padding: 1.5rem
 
 .title
     font-size: 2rem
@@ -19,28 +22,6 @@
 .form
     display: flex
     flex-direction: column
-
-.input
-    padding: 0.75rem
-    font-size: 1rem
-    border: 2px solid #ccc
-    border-radius: 4px
-    font-family: inherit
-    transition: border-color 0.3s
-
-    &:focus
-        outline: none
-        border-color: shared.$color-blue
-
-.valid
-    border-color: #28a745
-
-.invalid
-    border-color: #dc3545
-
-.error
-    color: #dc3545
-    font-size: 0.875rem
 
 .submitBtn
     padding: 0.75rem

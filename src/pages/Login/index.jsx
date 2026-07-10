@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Formik, Form } from "formik";
 import styles from "./Login.module.sass";
-import FormInput from "../../components/FormInput";
+import { TextInput } from "../../components/FormInput";
 import { SIGN_IN_VALIDATION_SCHEMA } from "../../schemas/authSchemas";
 
 function Login() {
@@ -12,12 +12,7 @@ function Login() {
     formikBag.resetForm();
   };
 
-  const classes = {
-    error: styles.error,
-    input: styles.input,
-    valid: styles.valid,
-    invalid: styles.invalid,
-  };
+  const classes = {};
 
   return (
     <div className={styles.container}>
@@ -28,7 +23,7 @@ function Login() {
         validationSchema={SIGN_IN_VALIDATION_SCHEMA}
       >
         <Form className={styles.form}>
-          <FormInput
+          <TextInput
             classes={classes}
             label="Email"
             type="email"
@@ -36,7 +31,7 @@ function Login() {
             placeholder="Enter your email"
             autoFocus
           />
-          <FormInput
+          <TextInput
             classes={classes}
             label="Password"
             type="password"

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Formik, Form } from "formik";
 import styles from "./Signup.module.sass";
-import FormInput from "../../components/FormInput";
+import { TextInput, CheckboxInput } from "../../components/FormInput";
 import { SIGN_UP_VALIDATION_SCHEMA } from "../../schemas/authSchemas";
 
 function Signup() {
@@ -23,12 +23,7 @@ function Signup() {
     formikBag.resetForm();
   };
 
-  const classes = {
-    error: styles.error,
-    input: styles.input,
-    valid: styles.valid,
-    invalid: styles.invalid,
-  };
+  const classes = {};
 
   return (
     <div className={styles.container}>
@@ -40,7 +35,7 @@ function Signup() {
       >
         <Form className={styles.form}>
           <div className={styles.formRow}>
-            <FormInput
+            <TextInput
               classes={classes}
               label="First Name *"
               type="text"
@@ -48,7 +43,7 @@ function Signup() {
               placeholder="Enter your first name"
               autoFocus
             />
-            <FormInput
+            <TextInput
               classes={classes}
               label="Last Name *"
               type="text"
@@ -57,7 +52,7 @@ function Signup() {
             />
           </div>
           <div className={styles.formRow}>
-            <FormInput
+            <TextInput
               classes={classes}
               label="Date of Birth *"
               type="date"
@@ -65,7 +60,7 @@ function Signup() {
               min={minDate}
               max={today}
             />
-            <FormInput
+            <TextInput
               classes={classes}
               label="Email *"
               type="email"
@@ -74,14 +69,14 @@ function Signup() {
             />
           </div>
           <div className={styles.formRow}>
-            <FormInput
+            <TextInput
               classes={classes}
               label="Password *"
               type="password"
               name="password"
               placeholder="Enter your password"
             />
-            <FormInput
+            <TextInput
               classes={classes}
               label="Confirm Password *"
               type="password"
@@ -89,7 +84,7 @@ function Signup() {
               placeholder="Confirm your password"
             />
           </div>
-          <FormInput
+          <CheckboxInput
             classes={classes}
             label={
               <>
@@ -97,7 +92,6 @@ function Signup() {
                 <Link to="/terms-and-conditions">Terms and Conditions</Link>
               </>
             }
-            type="checkbox"
             name="agreeToTerms"
           />
           <button type="submit" className={styles.submitBtn}>
