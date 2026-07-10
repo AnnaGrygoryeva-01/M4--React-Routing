@@ -21,11 +21,13 @@ export default function TextInput(props) {
         );
 
         return (
-          <label className={styles.label}>
-            <span className={styles.labelText}>{label}</span>
-            <input type={type} className={inputClassNames} {...restProps} {...field} />
+          <div className={styles.label}>
+            <label className={styles.labelContainer}>
+              <span className={styles.labelText}>{label}</span>
+              <input type={type} className={inputClassNames} {...restProps} {...field} />
+            </label>
             {errorNode}
-          </label>
+          </div>
         );
       }}
     </Field>

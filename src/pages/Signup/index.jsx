@@ -26,7 +26,7 @@ function Signup() {
   const classes = {};
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <h1 className={styles.title}>Sign Up</h1>
       <Formik
         initialValues={initialValues}
@@ -105,7 +105,7 @@ function Signup() {
           Sign in
         </Link>
       </p>
-    </div>
+    </section>
   );
 }
 
