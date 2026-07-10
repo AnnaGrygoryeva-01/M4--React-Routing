@@ -4,7 +4,7 @@
     +shared.flex-center
     flex-direction: column
     min-height: 60vh
-    padding: 2rem
+    padding: shared.$margin-lg
     width: min(90vw, 700px)
     margin: 0 auto
     border: 1px solid shared.$color-black
@@ -20,27 +20,26 @@
     text-align: center
 
 .form
-    display: flex
-    flex-direction: column
+    +shared.flex-column
 
 .submitBtn
-    padding: 0.75rem
+    padding: shared.$padding-md
     font-size: 1rem
     font-weight: 600
     color: white
     background-color: shared.$color-blue
     border: none
-    border-radius: 4px
+    border-radius: shared.$border-radius-md
     cursor: pointer
-    transition: background-color 0.3s
-    margin-top: 0.5rem
+    transition: background-color shared.$transition-duration
+    margin-top: shared.$padding-sm
 
     &:hover
         background-color: #0056b3
 
 .toggleText
     text-align: center
-    margin-top: 1rem
+    margin-top: shared.$padding-lg
     font-size: 0.95rem
 
 .toggleLink

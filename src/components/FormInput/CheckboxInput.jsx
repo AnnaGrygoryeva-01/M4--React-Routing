@@ -3,17 +3,17 @@ import classNames from "classnames";
 import styles from "./FormInput.module.sass";
 
 export default function CheckboxInput(props) {
-  const { name, label, classes, ...restProps } = props;
+  const { name, label, ...restProps } = props;
 
   return (
     <Field name={name}>
       {({ field, meta }) => {
-        const inputClassNames = classNames(classes?.input || styles.input, {
-          [classes?.invalid || styles.invalid]: meta.error && meta.touched,
+        const inputClassNames = classNames(styles.input, {
+          [styles.invalid]: meta.error && meta.touched,
         });
 
         const errorNode = meta.error && meta.touched && (
-          <span className={classes?.error || styles.error}>{meta.error}</span>
+          <span className={styles.error}>{meta.error}</span>
         );
 
         return (

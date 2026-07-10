@@ -7,12 +7,9 @@ import { SIGN_IN_VALIDATION_SCHEMA } from "../../schemas/authSchemas";
 function Login() {
   const initialValues = { email: "", password: "" };
 
-  const handleSubmit = (values, formikBag) => {
-    console.log("Sign in with:", values);
+  const handleSubmit = (_values, formikBag) => {
     formikBag.resetForm();
   };
-
-  const classes = {};
 
   return (
     <section className={styles.container}>
@@ -24,7 +21,6 @@ function Login() {
       >
         <Form className={styles.form}>
           <TextInput
-            classes={classes}
             label="Email"
             type="email"
             name="email"
@@ -32,7 +28,6 @@ function Login() {
             autoFocus
           />
           <TextInput
-            classes={classes}
             label="Password"
             type="password"
             name="password"

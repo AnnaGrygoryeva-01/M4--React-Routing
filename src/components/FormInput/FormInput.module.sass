@@ -1,28 +1,25 @@
 @use "../../styles/shared" as shared
 
 .label
-    display: flex
-    flex-direction: column
-    margin-bottom: 2rem
+    +shared.flex-column
+    margin-bottom: shared.$margin-lg
     position: relative
     width: 100%
-    padding-bottom: 0.5rem
+    padding-bottom: shared.$padding-sm
 
 .labelContainer
-    display: flex
-    flex-direction: column
+    +shared.flex-column
 
 .checkboxField
-    display: flex
-    flex-direction: column
-    margin-bottom: 1rem
+    +shared.flex-column
+    margin-bottom: shared.$margin-lg
     width: 100%
     position: relative
 
 .checkboxLabel
     display: flex
     align-items: flex-start
-    gap: 0.75rem
+    gap: shared.$gap-sm
     position: relative
     cursor: pointer
     font-size: 0.95rem
@@ -30,15 +27,15 @@
 
 .labelText
     font-size: 1rem
-    margin-bottom: 0.5rem
+    margin-bottom: shared.$padding-sm
     font-weight: 500
     line-height: 1.5
     user-select: none
 
     a
-        color: #007bff
+        color: shared.$color-blue-link
         text-decoration: none
-        transition: text-decoration 0.3s
+        transition: text-decoration shared.$transition-duration
 
         &:hover
             text-decoration: underline
@@ -49,12 +46,12 @@
 
 .input
     width: 100%
-    padding: 0.75rem
+    padding: shared.$padding-md
     font-size: 1rem
-    border: 2px solid #ccc
-    border-radius: 4px
+    border: shared.$border-default
+    border-radius: shared.$border-radius-md
     font-family: inherit
-    transition: border-color 0.3s
+    transition: border-color shared.$transition-duration
     box-sizing: border-box
 
     &:focus
@@ -68,7 +65,7 @@
         margin-top: 0.15rem
         cursor: pointer
         accent-color: shared.$color-blue
-        border-radius: 3px
+        border-radius: shared.$border-radius-sm
 
         &:focus
             outline: 2px solid shared.$color-blue
@@ -77,16 +74,16 @@
 
 
 .valid
-    border-color: #28a745
+    border-color: shared.$color-success
 
 .invalid
-    border-color: #dc3545
+    border-color: shared.$color-error
 
     .checkboxLabel &
-        accent-color: #dc3545
+        accent-color: shared.$color-error
 
 .error
-    color: #dc3545
+    color: shared.$color-error
     font-size: 0.875rem
     position: absolute
     top: 100%

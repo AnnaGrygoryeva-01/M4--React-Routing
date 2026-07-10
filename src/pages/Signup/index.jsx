@@ -1,12 +1,14 @@
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Formik, Form } from "formik";
 import styles from "./Signup.module.sass";
 import { TextInput, CheckboxInput } from "../../components/FormInput";
 import { SIGN_UP_VALIDATION_SCHEMA } from "../../schemas/authSchemas";
 
+const MIN_DATE = "1900-01-01";
+
 function Signup() {
-  const today = new Date().toISOString().split("T")[0];
-  const minDate = "1900-01-01";
+  const today = useMemo(() => new Date().toISOString().split("T")[0], []);
 
   const initialValues = {
     firstName: "",
@@ -18,12 +20,9 @@ function Signup() {
     agreeToTerms: false,
   };
 
-  const handleSubmit = (values, formikBag) => {
-    console.log("Sign up with:", values);
+  const handleSubmit = (_values, formikBag) => {
     formikBag.resetForm();
   };
-
-  const classes = {};
 
   return (
     <section className={styles.container}>
@@ -36,16 +35,14 @@ function Signup() {
         <Form className={styles.form}>
           <div className={styles.formRow}>
             <TextInput
-              classes={classes}
-              label="First Name *"
+    label="First Name *"
               type="text"
               name="firstName"
               placeholder="Enter your first name"
               autoFocus
             />
             <TextInput
-              classes={classes}
-              label="Last Name *"
+    label="Last Name *"
               type="text"
               name="lastName"
               placeholder="Enter your last name"
@@ -53,16 +50,14 @@ function Signup() {
           </div>
           <div className={styles.formRow}>
             <TextInput
-              classes={classes}
-              label="Date of Birth *"
+    label="Date of Birth *"
               type="date"
               name="dateOfBirth"
-              min={minDate}
+              min={MIN_DATE}
               max={today}
             />
             <TextInput
-              classes={classes}
-              label="Email *"
+    label="Email *"
               type="email"
               name="email"
               placeholder="Enter your email"
@@ -70,23 +65,20 @@ function Signup() {
           </div>
           <div className={styles.formRow}>
             <TextInput
-              classes={classes}
-              label="Password *"
+    label="Password *"
               type="password"
               name="password"
               placeholder="Enter your password"
             />
             <TextInput
-              classes={classes}
-              label="Confirm Password *"
+    label="Confirm Password *"
               type="password"
               name="confirmPassword"
               placeholder="Confirm your password"
             />
           </div>
           <CheckboxInput
-            classes={classes}
-            label={
+label={
               <>
                 I agree to the{" "}
                 <Link to="/terms-and-conditions">Terms and Conditions</Link>
