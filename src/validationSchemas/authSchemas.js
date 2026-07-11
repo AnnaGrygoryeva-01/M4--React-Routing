@@ -1,5 +1,13 @@
 import * as yup from "yup";
 
+const createNameValidator = (fieldName) =>
+  yup
+    .string()
+    .trim()
+    .min(2, `${fieldName} must be at least 2 characters`)
+    .max(50, `${fieldName} must not exceed 50 characters`)
+    .required(`${fieldName} is required`);
+
 const emailValidator = yup
   .string()
   .trim()
@@ -21,18 +29,8 @@ export const SIGN_IN_VALIDATION_SCHEMA = yup.object({
 });
 
 export const SIGN_UP_VALIDATION_SCHEMA = yup.object({
-  firstName: yup
-    .string()
-    .trim()
-    .min(2, "First name must be at least 2 characters")
-    .max(50, "First name must not exceed 50 characters")
-    .required("First name is required"),
-  lastName: yup
-    .string()
-    .trim()
-    .min(2, "Last name must be at least 2 characters")
-    .max(50, "Last name must not exceed 50 characters")
-    .required("Last name is required"),
+  firstName: createNameValidator("First name"),
+  lastName: createNameValidator("Last name"),
   dateOfBirth: yup
     .date()
     .max(new Date(), "Date of birth cannot be in the future")
