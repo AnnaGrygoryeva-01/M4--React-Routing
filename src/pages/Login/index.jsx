@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Formik, Form } from "formik";
 import styles from "./Login.module.sass";
 import { TextInput } from "../../components/FormInput";
-import { SIGN_IN_VALIDATION_SCHEMA } from "../../schemas/authSchemas";
+import { SIGN_IN_VALIDATION_SCHEMA } from "../../validationSchemas/authSchemas";
 
 function Login() {
   const initialValues = { email: "", password: "" };

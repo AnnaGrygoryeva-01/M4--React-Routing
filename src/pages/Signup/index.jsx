@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Formik, Form } from "formik";
 import styles from "./Signup.module.sass";
 import { TextInput, CheckboxInput } from "../../components/FormInput";
-import { SIGN_UP_VALIDATION_SCHEMA } from "../../schemas/authSchemas";
+import { SIGN_UP_VALIDATION_SCHEMA } from "../../validationSchemas/authSchemas";
 
 const MIN_DATE = "1900-01-01";
 
@@ -35,14 +35,14 @@ function Signup() {
         <Form className={styles.form}>
           <div className={styles.formRow}>
             <TextInput
-    label="First Name *"
+              label="First Name *"
               type="text"
               name="firstName"
               placeholder="Enter your first name"
               autoFocus
             />
             <TextInput
-    label="Last Name *"
+              label="Last Name *"
               type="text"
               name="lastName"
               placeholder="Enter your last name"
@@ -50,14 +50,14 @@ function Signup() {
           </div>
           <div className={styles.formRow}>
             <TextInput
-    label="Date of Birth *"
+              label="Date of Birth *"
               type="date"
               name="dateOfBirth"
               min={MIN_DATE}
               max={today}
             />
             <TextInput
-    label="Email *"
+              label="Email *"
               type="email"
               name="email"
               placeholder="Enter your email"
@@ -65,20 +65,20 @@ function Signup() {
           </div>
           <div className={styles.formRow}>
             <TextInput
-    label="Password *"
+              label="Password *"
               type="password"
               name="password"
               placeholder="Enter your password"
             />
             <TextInput
-    label="Confirm Password *"
+              label="Confirm Password *"
               type="password"
               name="confirmPassword"
               placeholder="Confirm your password"
             />
           </div>
           <CheckboxInput
-label={
+            label={
               <>
                 I agree to the{" "}
                 <Link to="/terms-and-conditions">Terms and Conditions</Link>

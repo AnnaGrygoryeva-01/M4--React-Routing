@@ -1,23 +1,10 @@
 @use "../../styles/shared" as shared
 
 .container
-    +shared.flex-center
-    flex-direction: column
-    min-height: 60vh
-    padding: shared.$margin-lg
-    width: min(95vw, 1000px)
-    margin: 0 auto
-    border: 1px solid shared.$color-black
-    border-radius: 8px
-
-    @media (max-width: 600px)
-        width: 100%
-        padding: 1.5rem
+    +shared.form-container(700px)
 
 .title
-    font-size: 2rem
-    margin-bottom: 1.5rem
-    text-align: center
+    +shared.form-title
 
 .form
     +shared.flex-column
@@ -32,19 +19,7 @@
         gap: 0
 
 .submitBtn
-    padding: shared.$padding-md
-    font-size: 1rem
-    font-weight: 600
-    color: white
-    background-color: shared.$color-blue
-    border: none
-    border-radius: shared.$border-radius-md
-    cursor: pointer
-    transition: background-color shared.$transition-duration
-    margin-top: 1.5rem
-
-    &:hover
-        background-color: #0056b3
+    +shared.form-submit-btn(1.5rem)
 
 .toggleText
     text-align: center
@@ -52,9 +27,4 @@
     font-size: 0.95rem
 
 .toggleLink
-    color: shared.$color-blue
-    text-decoration: none
-    font-weight: 600
-
-    &:hover
-        text-decoration: underline
+    +shared.form-toggle-link
