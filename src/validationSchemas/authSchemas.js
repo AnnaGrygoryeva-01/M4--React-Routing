@@ -33,7 +33,7 @@ export const SIGN_UP_VALIDATION_SCHEMA = yup.object({
   lastName: createNameValidator("Last name"),
   dateOfBirth: yup
     .date()
-    .max(new Date(), "Date of birth cannot be in the future")
+    .max(() => new Date(), "Date of birth cannot be in the future")
     .required("Date of birth is required"),
   email: emailValidator,
   password: passwordValidator,
